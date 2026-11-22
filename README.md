@@ -16,10 +16,12 @@ world's news of Saturday 21 November 2026, and writes it to
 python3 main.py   # writes /output/entry.png (1024x1024 PNG)
 ```
 
-Python 3.13, Pillow. No network, no clock, no randomness: every run
-writes byte-identical output. The three DejaVu fonts the page uses are
-bundled in `fonts/` (Bitstream Vera license) so the program renders the
-same wherever it runs.
+Python 3.13, standard library only — no Pillow, no network, no clock,
+no randomness: every run writes byte-identical output. The text is set
+from glyph bitmaps baked from DejaVu (serif-bold for the masthead and
+headlines, sans for everything else) and carried in `main.py` as base64;
+the PNG itself is encoded by hand with `zlib`. The `fonts/` directory
+is left in the repository unused.
 
 ## The six stories
 
